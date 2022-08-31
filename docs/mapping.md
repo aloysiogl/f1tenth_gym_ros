@@ -34,7 +34,9 @@ roslaunch hector_slam_launch tutorial.launch
 
 ### Install
 
-Better to install directly from the repo [https://github.com/ros-perception/slam_gmapping.git](https://github.com/ros-perception/slam_gmapping.git). 
+Better to install directly from the repo [https://github.com/ros-perception/slam_gmapping.git](https://github.com/ros-perception/slam_gmapping.git).
+
+First use `sudo apt install ros-melodic-slam-gmapping` (preferred) or `sudo apt install ros-melodic-gmapping` to install the dependencies.
 
 ```
 # Reminder (create catkin_ws)
@@ -51,9 +53,9 @@ catkin_make
 source devel/setup.bash
 ```
 
-You ming also need `rosmake gmapping` (probably need to be in the same dir). Make sure you can roscd to the package.
+You might also need `rosmake gmapping` (probably need to be in the same dir). Make sure you can roscd to the package.
 
-If you want to try apt use `sudo apt install ros-melodic-slam-gmapping` or `sudo apt install ros-melodic-gmapping`.
+In the end source your environment: `source devel/setup.bash`.
 
 ### Configuration
 
@@ -117,5 +119,5 @@ Play a record using `rosbag play [filename] --clock`. The clock option makes sur
 To save the map we rely on the `map_server` package using the command:
 
 ```
-rosrun map server map_saver −f [filename]
+rosrun map_server map_saver −f [filename]
 ```
