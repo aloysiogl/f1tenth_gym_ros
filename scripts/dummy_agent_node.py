@@ -15,7 +15,7 @@ class Agent(object):
         len_scans = len(scan_msg.ranges)
         ranges = np.array([x if x < 100 else 0 for x in scan_msg.ranges])
         ranges = np.array(scan_msg.ranges)
-        sum_1 = np.sum(ranges[:len_scans/2]-ranges[len_scans/2:])
+        sum_1 = np.sum(ranges[:len_scans//2]-ranges[len_scans//2:])
         control = sum_1*0.001
         angle = max(min(control, np.pi/2), -np.pi/2)
         self.past_error = sum_1
